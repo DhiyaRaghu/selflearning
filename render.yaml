@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: career-coach-ai
+    runtime: python
+    buildCommand: ""
+    startCommand: python server.py
+    healthCheckPath: /api/health
+    plan: starter
+    disk:
+      name: career-coach-data
+      mountPath: /var/data
+      sizeGB: 1
+    envVars:
+      - key: CAREER_DB_PATH
+        value: /var/data/career_coach.sqlite3
+      - key: HOST
+        value: 0.0.0.0
+      - key: COOKIE_SECURE
+        value: "1"
+
