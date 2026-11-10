@@ -1,0 +1,2 @@
+# Career Coach AI currently uses only Python standard-library modules.
+
