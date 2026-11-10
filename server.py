@@ -109,7 +109,7 @@ class Handler(SimpleHTTPRequestHandler):
         finally:con.close()
 
 if __name__=='__main__':
-    host=os.getenv('HOST','127.0.0.1');port=int(os.getenv('PORT','8000'))
+    host=os.getenv('HOST','0.0.0.0');port=int(os.getenv('PORT','8000'))
     print(f'Career Coach AI running at http://{host}:{port}')
     ThreadingHTTPServer((host,port),Handler).serve_forever()
 
